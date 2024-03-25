@@ -35,7 +35,7 @@ const App = () => {
         </a>
       </h1>
       {produtos
-        .filter((produto) => Number(produto.preco.replace("R$ ", "")) > 1500)
+        .filter(({ preco }) => Number(preco.replace("R$ ", "")) > 1500)
         .map(
           (
             { id, nome, preco, cores } // Seria o mesmo que .map((produto)), porém iria repetir produto toda vez que fosse chamar o id, nome preco...
