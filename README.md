@@ -1,8 +1,6 @@
-# React + Vite
+# Origamid | React completo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Este repositório contempla os exercícios apresentados no curso de React Completo para Iniciantes produzido pela Origamid
+- Cada branch contém um exercício diferente, e cada commit contém, em sua descrição, o link para o exercício no site oficial da Origamid
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img align="center" alt="React" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
