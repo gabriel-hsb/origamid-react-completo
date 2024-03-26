@@ -8,6 +8,8 @@ import Home from "./Components/Home";
 import Produtos from "./Components/Produtos";
 import "./style.scss";
 
+const urlAtual = window.location.pathname;
+
 const App = () => {
   return (
     <>
@@ -20,10 +22,13 @@ const App = () => {
         </a>
       </h1>
       <Navbar />
-      <Home />
-      <Produtos />
+      {urlAtual === "/Home" ? <Home /> : <Produtos />}
     </>
   );
 };
+
+//Professor disse que essa não é a melhor forma de
+//fazer a mudança de URL. O react possui alternativa melhor
+// que será apresentada futuramente.
 
 export default App;

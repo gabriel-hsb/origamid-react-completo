@@ -8,7 +8,7 @@ const Produtos = () => {
 
   return (
     <>
-      <h1>Produtos</h1>
+      <h1>Nossos produtos</h1>
 
       {produtos.map(({ nome, propriedades }) => (
         <div className={styles.lista} key={nome}>

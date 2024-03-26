@@ -5,10 +5,14 @@ const Navbar = () => {
     <nav>
       <ul className={styles.listaNav}>
         <li>
-          <button>Home</button>
+          <a href="/Home">
+            <button>Home</button>{" "}
+          </a>
         </li>
         <li>
-          <button>Produtos</button>
+          <a href="/Produtos">
+            <button>Produtos</button>{" "}
+          </a>
         </li>
       </ul>
     </nav>
