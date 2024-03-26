@@ -8,6 +8,7 @@
 // Mostre a mensagem carregando... enquanto o fetch é realizado
 
 import MyComponent from "./components/MyComponent";
+import { GlobalStorage } from "./GlobalContext";
 
 import "./style.scss";
 
@@ -17,12 +18,15 @@ const App = () => {
       <h1>
         <a
           target="_blank"
-          href="https://www.origamid.com/slide/react-completo/#/0301-usestate/12"
+          href="https://www.origamid.com/slide/react-completo/#/0305-usecontext/6"
         >
-          Exercício useState | Slide 0301 ↗
+          Exercício useContext | Slide 0305 ↗
         </a>
       </h1>
-      <MyComponent />
+
+      <GlobalStorage>
+        <MyComponent  />
+      </GlobalStorage>
     </>
   );
 };

@@ -1,58 +1,53 @@
-// Os links abaixo puxam dados de um produto em formato JSON
-// https://ranekapi.origamid.dev/json/api/produto/tablet
-// https://ranekapi.origamid.dev/json/api/produto/smartphone
-// https://ranekapi.origamid.dev/json/api/produto/notebook
-// Crie uma interface com 3 botões, um para cada produto.
-// Ao clicar no botão faça um fetch a api e mostre os dados do produto na tela.
-// Mostre apenas um produto por vez
-// Mostre a mensagem carregando... enquanto o fetch é realizado
-
-import { useState } from "react";
+import { useContext } from "react";
 
 import "./MyComponent.scss";
 
-import Navbar from "../Navbar";
-import Produto from "../Produto";
+import { GlobalContext } from "../../GlobalContext";
+import Button from "../Button";
 
 const MyComponent = () => {
-  const [isCarregando, setIsCarregando] = useState(true);
-  const [produto, setProduto] = useState([]); //iniciando com uma array vazia
-
-  async function handleClick(e) {
-    setIsCarregando(true); // Defina o estado de carregamento como verdadeiro
-    const nomeProduto = e.target.innerText.toLowerCase();
-
-    // Aguarde 2 segundos usando setTimeout
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    // Continue com a lógica de busca do produto após o atraso
-    const res = await fetch(
-      `https://ranekapi.origamid.dev/json/api/produto/${nomeProduto}`
-    );
-    const data = await res.json();
-    setIsCarregando(false);
-    setProduto(data);
-  }
+  const global = useContext(GlobalContext);
 
   return (
     <>
       <h1>Produtos Ranek</h1>
-      <h2>Puxados utilizando a API da Origamid - Ranek</h2>
 
-      <Navbar handleClick={handleClick} />
+      <Button handleClick={global.handleClick} btnInner={"Limpar dados"} />
 
-      {isCarregando ? (
-        <b>Carregando... </b>
-      ) : (
-        <Produto
-          nome={produto.nome}
-          preco={produto.preco}
-          descricao={produto.descricao}
-          fotos={produto.fotos}
-          usuario_id={produto.usuario_id}
-          vendido={produto.vendido}
-        />
-      )}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          columnGap: "2rem",
+        }}
+      >
+        {global.produtos.map(({ id, nome, preco, descricao }) => (
+          <ul
+            style={{
+              marginBlock: "1.5rem",
+              backgroundColor: "#caf",
+              padding: "2rem",
+              borderRadius: "8px",
+            }}
+            key={id}
+          >
+            <li>
+              {" "}
+              <b>Nome do produto:</b> {nome}{" "}
+            </li>
+
+            <li>
+              <b>Preço do produto: </b> R${preco}{" "}
+            </li>
+            <li>
+              <b>Descrição do produto: </b> {descricao}{" "}
+            </li>
+            <li>
+              <b>Id do produto:</b> {id}{" "}
+            </li>
+          </ul>
+        ))}
+      </div>
     </>
   );
 };
