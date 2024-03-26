@@ -1,21 +1,23 @@
 import styles from "./Navbar.module.scss";
 
-const Navbar = () => {
+import Button from "../Button";
+
+const Navbar = ({ handleClick }) => {
   return (
-    <nav>
-      <ul className={styles.listaNav}>
-        <li>
-          <a href="/Home">
-            <button>Home</button>{" "}
-          </a>
-        </li>
-        <li>
-          <a href="/Produtos">
-            <button>Produtos</button>{" "}
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <ul className={styles.navBar}>
+      <li>
+        {" "}
+        <Button handleClick={handleClick} btnInner={"Tablet"} />{" "}
+      </li>
+      <li>
+        {" "}
+        <Button handleClick={handleClick} btnInner={"Smartphone"} />{" "}
+      </li>
+      <li>
+        {" "}
+        <Button handleClick={handleClick} btnInner={"Notebook"} />{" "}
+      </li>
+    </ul>
   );
 };
 

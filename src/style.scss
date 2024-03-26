@@ -5,14 +5,6 @@ $font-color: #112a46;
 
 $bg: #a7c957;
 
-@mixin bg-style {
-  background-color: $primary;
-  border: 10px solid $secondary;
-  padding: 1rem 2rem;
-  margin-block: 20px;
-  border-radius: 8px;
-}
-
 *,
 *::after,
 *::before {
@@ -38,10 +30,6 @@ html {
 
 body {
   margin: 1.5rem;
-}
-
-ul {
-  list-style: square;
 }
 
 li {
@@ -73,20 +61,19 @@ textarea:focus {
 }
 
 button {
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.1s;
   background: $primary;
   color: $font-color;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1.5rem;
   border: 1px solid transparent;
 }
 
 button:hover,
 button:focus {
   background: $secondary;
-  outline: none;
   border: 1px solid #fff;
 }
 

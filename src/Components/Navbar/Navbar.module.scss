@@ -1,7 +1,9 @@
 @import "../../style.scss";
 
-.listaNav {
+.navBar {
   display: flex;
-  justify-content: space-evenly;
-  list-style: none;
+  align-items: center;
+  list-style-type: none;
+  gap: 1rem;
+  justify-content: center;
 }
