@@ -1,0 +1,96 @@
+$primary: #386641;
+$secondary: #6a994e;
+
+$font-color: #112a46;
+
+$bg: #a7c957;
+
+@mixin bg-style {
+  background-color: $primary;
+  border: 10px solid $secondary;
+  padding: 1rem 2rem;
+  margin-block: 20px;
+  border-radius: 8px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: underline;
+}
+
+html {
+  background-color: $bg;
+
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+
+  color: $font-color;
+}
+
+body {
+  margin: 1.5rem;
+}
+
+ul {
+  list-style: square;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+  display: block;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  background: #eee;
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color);
+  background: white;
+  box-shadow: 0 0 0 3px var(--color-light);
+}
+
+button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.1s;
+  background: $primary;
+  color: $font-color;
+  padding: 1rem 3rem;
+  border: 1px solid transparent;
+}
+
+button:hover,
+button:focus {
+  background: $secondary;
+  outline: none;
+  border: 1px solid #fff;
+}
+
+hr {
+  border: 2px solid black;
+  margin: 2rem auto;
+}

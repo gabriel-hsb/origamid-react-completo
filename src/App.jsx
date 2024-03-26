@@ -1,31 +1,27 @@
-// Organize os produtos como mostrado no vídeo
-// Mostre apenas produtos que forem mais caros que R$ 1500
-import "./style.css";
+// Replique a interface como a apresentada na aula
+// Utilize a array abaixo para mostrar os produtos
+// Quebre em componentes o que precisar ser reutilizado
+// Dica: const { pathname } = window.location; (puxa o caminho do URL)
+
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import Produtos from "./Components/Produtos";
+import "./style.scss";
 
 const App = () => {
-  function handleClick(e) {
-    alert(`Você comprou ${e.target.innerText}`);
-  }
-  function handleHover() {
-    alert("Você passou o mouse! ");
-  }
   return (
     <>
       <h1>
         <a
           target="_blank"
-          href="https://www.origamid.com/slide/react-completo/#/0209-eventos/1"
+          href="https://www.origamid.com/slide/react-completo/#/0212-desafio-componentes/1"
         >
-          Slide 0209 ↗
+          Exercício | Slide 0212 ↗
         </a>
       </h1>
-      <div style={{ display: "flex", gap: "30px" }}>
-        <button onClick={handleClick}>Camiseta</button>
-        <button onClick={({ target }) => target.classList.toggle("perigo")}>
-          Muda de cor
-        </button>
-        <button onMouseMove={handleHover}>Hover me</button>
-      </div>
+      <Navbar />
+      <Home />
+      <Produtos />
     </>
   );
 };

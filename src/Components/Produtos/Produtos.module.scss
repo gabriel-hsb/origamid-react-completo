@@ -1,0 +1,12 @@
+@import "../../style.scss";
+
+.lista {
+  @include bg-style;
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+}
