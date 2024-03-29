@@ -1,22 +1,28 @@
-// Otimize o código do slide anterior
-// Utilizando a array abaixo para mostrar
-// cada checkbox na tela.
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// const coresArray = ['azul', 'roxo', 'laranja', 'verde', 'vermelho', 'cinza'];
+import Header from "./components/Header";
+import Contato from "./components/Contato";
+import Produtos from "./components/Produtos";
+import TemplateProduto from "./components/TemplateProduto";
 
-import "./style.scss";
+import { GlobalStorage } from "./GlobalContext";
+
+import "./style.css";
 
 const App = () => {
   return (
     <>
-      <h1>
-        <a
-          target="_blank"
-          href="https://www.origamid.com/slide/react-completo/#/0405-checkbox/5"
-        >
-          Exercício Form - Checkbox | Slide 0405 ↗
-        </a>
-      </h1>
+      <GlobalStorage>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            {/* Usando o barra, Produtos torna-se o 'index.html' */}
+            <Route path="/" element={<Produtos />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="produto/:id" element={<TemplateProduto />} />
+          </Routes>
+        </BrowserRouter>
+      </GlobalStorage>
     </>
   );
 };

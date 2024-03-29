@@ -1,0 +1,53 @@
+:root {
+  --primary: #3d405b;
+  --primary-darken: #333544;
+  --secondary: #e07a5f;
+  --font-color: #112a46;
+
+  --bg: #f4f1de;
+
+  --radius: 6px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background-color: var(--bg);
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+
+  color: var(--font-color);
+}
+
+body {
+  margin: 1.5rem;
+}
+
+img {
+  border-radius: var(--radius);
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.8s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
