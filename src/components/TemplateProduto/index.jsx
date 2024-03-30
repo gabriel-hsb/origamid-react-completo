@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import * as S from "./TemplateProduto";
+import * as S from "./TemplateProduto.Styles";
 
 const TemplateProduto = () => {
   const { id } = useParams();

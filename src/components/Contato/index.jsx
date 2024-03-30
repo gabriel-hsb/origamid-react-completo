@@ -1,8 +1,27 @@
+import writingMachine from "../../assets/images/writing-machine.jpg";
+
+import * as S from "./Contato.Styles.js";
+
 const Contato = () => {
   return (
-  
-  <h1>Este é meu componente de contato</h1>
-  
+    <S.ContatoContainer className="animeLeft">
+      <S.ContatoImg>
+        <img
+          src={writingMachine}
+          alt="Uma máquina de escrever preta antiga em um fundo branco"
+        />
+      </S.ContatoImg>
+      <S.ContatoDescricao>
+        <h1>Nosso contato</h1>
+        <p className="descricao">
+          <ul>
+            <li>Telefone: 15 9.9999-9999</li>
+            <li>Rua Lorem Ipsum, 89</li>
+            <li>Abertos todos os dias</li>
+          </ul>
+        </p>
+      </S.ContatoDescricao>
+    </S.ContatoContainer>
   );
 };
 

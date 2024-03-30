@@ -11,6 +11,7 @@ const Header = () => {
         Produtos
       </NavLink>
       <NavLink to="contato">Contato</NavLink>
+      <NavLink to="sobre">Sobre</NavLink>
     </S.NavBar>
   );
 };
