@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet";
+
 import writingMachine from "../../assets/images/writing-machine.jpg";
 
 import * as S from "./Contato.Styles.js";
@@ -5,6 +7,9 @@ import * as S from "./Contato.Styles.js";
 const Contato = () => {
   return (
     <S.ContatoContainer className="animeLeft">
+      <Helmet>
+        <title> Contato </title>
+      </Helmet>
       <S.ContatoImg>
         <img
           src={writingMachine}

@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet";
+
 import * as S from "./Sobre.Styles";
 
 import sobrePic from "../../assets/images/sobre.jpg";
@@ -5,6 +7,9 @@ import sobrePic from "../../assets/images/sobre.jpg";
 const Sobre = () => {
   return (
     <S.SobreContainer className="animeLeft">
+      <Helmet>
+        <title> Sobre </title>
+      </Helmet>
       <S.SobreImg>
         <img src={sobrePic} />
       </S.SobreImg>

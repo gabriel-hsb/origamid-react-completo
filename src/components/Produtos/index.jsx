@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
@@ -10,6 +11,9 @@ const Produtos = () => {
 
   return (
     <section className="animeLeft">
+      <Helmet>
+        <title>Produtos </title>
+      </Helmet>
       <h1>Nossos produtos</h1>
       <CardsContainer>
         {global.produtosRes.length > 0 ? (
@@ -17,7 +21,7 @@ const Produtos = () => {
             return (
               <Card key={produto.id}>
                 <Link to={`/produto/${produto.id}`}>
-                    <img src={produto.fotos[0].src} />
+                  <img src={produto.fotos[0].src} />
                   <h2> {produto.nome} </h2>
                 </Link>
               </Card>

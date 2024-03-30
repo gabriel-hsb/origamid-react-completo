@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 import { useParams } from "react-router-dom";
 
@@ -29,6 +30,9 @@ const TemplateProduto = () => {
   if (produto === null) return null; // se o produto for nulo (se o fetch der errado) não vai renderizar nada que tem abaixo
   return (
     <S.ProdutoContainer className="animeLeft">
+      <Helmet>
+        <title>Produtos | {produto.nome} </title>
+      </Helmet>
       <S.ProdutoImg>
         <img src={produto.fotos[0].src}></img>
       </S.ProdutoImg>
